@@ -91,12 +91,12 @@ Set both `MinLevel` and `MinExpansion` to `0` for a tier to make it available to
 
 ### Version
 
-- v2026.05.17 — Bepcraft fork: progression tier selection, level/expansion gating, Classic/TBC enchant sets, single NPC for all tiers, spawns in all major cities + Shattrath + Dalaran
-- v2019.04.15 — Ported to AzerothCore by gtao725
+- v2026.05.17 — Creation of progression tier selection, level/expansion gating, classic/TBC enchant sets.
+- v2019.04.15 — Ported to Azerothore by gtao725
 - v2019.02.21 — Add AI/Phrases/Emotes, Update Menu
 - v2018.12.05 — Fix broken menu; replace Enchant Weapon function; add creature AI and text
 - v2018.12.01 — Update function, add icons, fix typos, add personality
-- v2017.08.08 — Original release by StygianTheBest
+- v2017.08.08 — Original release by StygianTheBestC
 
 ---
 
