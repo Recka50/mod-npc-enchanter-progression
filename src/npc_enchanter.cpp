@@ -7,24 +7,41 @@ _This module was created for [StygianCore](https://rebrand.ly/stygiancoreproject
 ### Data ###
 ------------------------------------------------------------------------------------------------------------------
 - Type: NPC (ID: 601015)
+- Name: Beauregard Boneglitter
 - Script: npc_enchantment
-- Config: Yes
-- SQL: No
+- Config: npc_enchanter.conf
+- SQL: data/sql/db-world/npc_enchanter.sql
 
+### Enchant Scope ###
+------------------------------------------------------------------------------------------------------------------
+- Classic: enchants available up to and including patch 1.12 (Naxxramas)
+- TBC:     enchants available up to and including patch 2.4.3 (Sunwell Plateau)
+- Wrath:   all WotLK enchants
+
+### Gossip Action Ranges ###
+------------------------------------------------------------------------------------------------------------------
+- 800-802 : Tier selection (Classic / TBC / Wrath)
+- 1-13    : Slot selection
+- 300     : Back to slot menu
+- 301     : Back to tier selection
+- 400-499 : Classic enchant actions
+- 500-599 : TBC enchant actions
+- 100-299 : Wrath enchant actions
 
 ### Version ###
 ------------------------------------------------------------------------------------------------------------------
-- v2019.04.15 - Ported to AC by gtao725 (https://github.com/gtao725/)
+- v2026.01.01 - Progression tier selection, level/expansion gating, Classic/TBC enchant sets
+- v2019.04.15 - Ported to AzerothCore by gtao725 (https://github.com/gtao725/)
 - v2019.02.21 - Add AI/Phrases/Emotes, Update Menu
 - v2018.12.05 - Fix broken menu. Replace 'Enchant Weapon' function. Add creature AI and creature text.
 - v2018.12.01 - Update function, Add icons, Fix typos, Add a little personality (Emotes don't always work)
 - v2017.08.08 - Release
 
-
 ### CREDITS
 ------------------------------------------------------------------------------------------------------------------
-![Styx](https://stygianthebest.github.io/assets/img/avatar/avatar-128.jpg "Styx")
-![StygianCore](https://stygianthebest.github.io/assets/img/projects/stygiancore/StygianCore.png "StygianCore")
+##### Original module by StygianTheBest for [StygianCore](https://rebrand.ly/stygiancoreproject)
+##### AzerothCore port by [gtao725](https://github.com/gtao725/)
+##### Progression fork by [Bepcraft](https://github.com/Recka50)
 
 ##### This module was created for [StygianCore](https://rebrand.ly/stygiancoreproject). A World of Warcraft 3.3.5a Solo/LAN repack by StygianTheBest | [GitHub](https://rebrand.ly/stygiangithub) | [Website](https://rebrand.ly/stygianthebest))
 
