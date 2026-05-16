@@ -91,7 +91,7 @@ Set both `MinLevel` and `MinExpansion` to `0` for a tier to make it available to
 
 ### Version
 
-- v2026.05.17 — Creation of progression tier selection, level/expansion gating, classic/TBC enchant sets.
+- v2026.05.17 — Creation of progression tier selection, level/expansion gating, classic/TBC enchant sets by Recka50
 - v2019.04.15 — Ported to Azerothore by gtao725
 - v2019.02.21 — Add AI/Phrases/Emotes, Update Menu
 - v2018.12.05 — Fix broken menu; replace Enchant Weapon function; add creature AI and text
