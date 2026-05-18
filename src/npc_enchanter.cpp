@@ -1267,12 +1267,6 @@ public:
         case 239:
             Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_WRISTS), CLASSIC_BRACERS_HEALING);
             break;
-        case 240:
-            Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_WRISTS), CLASSIC_BRACERS_AGILITY);
-            break;
-        case 241:
-            Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_WRISTS), CLASSIC_BRACERS_MIGHTY_INT);
-            break;
     
         // Gloves
         case 242:
@@ -1292,12 +1286,6 @@ public:
             break;
         case 247:
             Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_HANDS), CLASSIC_GLOVES_SHADOW_POWER);
-            break;
-        case 248:
-            Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_HANDS), CLASSIC_GLOVES_SUBTLETY);
-            break;
-        case 249:
-            Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_HANDS), CLASSIC_GLOVES_DODGE);
             break;
     
         // Boots
