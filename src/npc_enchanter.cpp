@@ -561,7 +561,7 @@ public:
             AddEnchantGossip(player, EXPANSION_TBC,   "22 Defense", 162);
             AddEnchantGossip(player, EXPANSION_VANILLA, "Greater Stats (+4 All)",  235);
             AddEnchantGossip(player, EXPANSION_VANILLA, "Major Health (+100)",     236);
-            AddEnchantGossip(player, EXPANSION_VANILLA, "Major Mana (+100)",       237
+            AddEnchantGossip(player, EXPANSION_VANILLA, "Major Mana (+100)",       237);
             AddGossipItemFor(player, GOSSIP_ICON_TALK, "Back", GOSSIP_SENDER_MAIN, 300);
             player->PlayerTalkClass->SendGossipMenu(100008, creature->GetGUID());
             return true;
