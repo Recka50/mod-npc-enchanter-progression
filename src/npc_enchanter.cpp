@@ -222,9 +222,11 @@ enum Enchants
     CLASSIC_CLOAK_LESSER_AGILITY     = 849,  // +3 Agility cloak 
     CLASSIC_CLOAK_GREATER_RESISTANCE = 1888,  // +5 All Resistances 
     CLASSIC_CLOAK_SUPERIOR_DEFENCE   = 1889,  // +70 Armor 
+    CLASSIC_CLOAK_SUBTLETY           = 2621,  // 2% reduced threat
  
     CLASSIC_CHEST_MAJOR_HEALTH       = 1892,   // +100 Health 
     CLASSIC_CHEST_MAJOR_MANA         = 1893,  // +100 Mana 
+    CLASSIC_CHEST_GREATER_STATS      = 1891,  // +4 stats
  
     CLASSIC_BRACERS_SUPERIOR_STR     = 1885,   // +9 Strength 
     CLASSIC_BRACERS_SUPERIOR_STA     = 1886,   // +7 Stamina 
@@ -241,7 +243,11 @@ enum Enchants
     CLASSIC_GLOVES_SUPERIOR_AGI      = 2564,  // +15 Agility 
     CLASSIC_GLOVES_SHADOW_POWER      = 2614,  // +20 Shadow SP 
     // CLASSIC_GLOVES_SUBTLETY          = 1604,  // -2% Threat 
-    // CLASSIC_GLOVES_DODGE             = 1606,  // +1% Dodge 
+    // CLASSIC_GLOVES_DODGE             = 1606,  // +1% Dodge
+
+    CLASSIC_BOOTS_MINOR_SPEED       = 911,  // Minor speed increase
+    CLASSIC_BOOTS_GREATER_AGILITY   = 1887, // +7 agility
+    CLASSIC_BOOTS_GREATER_STAMINA   = 929,  // +7 Stamina
 
 };
 
@@ -471,13 +477,13 @@ public:
             if (item->GetTemplate()->InventoryType == INVTYPE_SHIELD)
             {
                 AddEnchantGossip(player, EXPANSION_TBC,     "20 Defense", 118);
-                AddEnchantGossip(player, EXPANSION_VANILLA, "25 Intellect", 119);
+                AddEnchantGossip(player, EXPANSION_WRATH, "25 Intellect", 119);
                 AddEnchantGossip(player, EXPANSION_WRATH,   "12 Resilience", 120);
                 AddEnchantGossip(player, EXPANSION_WRATH,   "36 Block", 121);
-                AddEnchantGossip(player, EXPANSION_VANILLA, "18 Stamina", 122);
+                AddEnchantGossip(player, EXPANSION_WRATH, "18 Stamina", 122);
                 AddEnchantGossip(player, EXPANSION_TBC,     "81 Block + 50% Less Disarm", 123);
-                AddGossipItemFor(player, GOSSIP_ICON_TALK, "Back", GOSSIP_SENDER_MAIN, 300);
                 AddEnchantGossip(player, EXPANSION_VANILLA, "Greater Stamina (+9)",    227);
+                AddGossipItemFor(player, GOSSIP_ICON_TALK, "Back", GOSSIP_SENDER_MAIN, 300);
             }
             else
             {
@@ -548,6 +554,7 @@ public:
             AddEnchantGossip(player, EXPANSION_VANILLA, "Lesser Agility (+3)",     232);
             AddEnchantGossip(player, EXPANSION_VANILLA, "Greater Resistance (+5)", 233);
             AddEnchantGossip(player, EXPANSION_VANILLA, "Superior Defence (+70 Armor)", 234);
+            AddEnchantGossip(player, EXPANSION_VANILLA, "Subtlety (2% reduced threat)", 231);
             AddGossipItemFor(player, GOSSIP_ICON_TALK, "Back", GOSSIP_SENDER_MAIN, 300);
             player->PlayerTalkClass->SendGossipMenu(100007, creature->GetGUID());
             return true;
@@ -571,16 +578,16 @@ public:
             AddEnchantGossip(player, EXPANSION_WRATH,   "40 Stamina", 163);
             AddEnchantGossip(player, EXPANSION_TBC,     "30 Spell Power", 164);
             AddEnchantGossip(player, EXPANSION_WRATH,   "50 Attack Power", 165);
-            AddEnchantGossip(player, EXPANSION_VANILLA, "18 Spirit", 166);
+            AddEnchantGossip(player, EXPANSION_WRATH, "18 Spirit", 166);
             AddEnchantGossip(player, EXPANSION_WRATH,   "15 Expertise", 167);
             AddEnchantGossip(player, EXPANSION_TBC,     "+6 All Stats", 168);
-            AddEnchantGossip(player, EXPANSION_VANILLA, "16 Intellect", 169);
+            AddEnchantGossip(player, EXPANSION_WRATH, "16 Intellect", 169);
             AddEnchantGossip(player, EXPANSION_VANILLA, "Superior Strength",       238);
             AddEnchantGossip(player, EXPANSION_VANILLA, "Superior Stamina",        239);
             AddEnchantGossip(player, EXPANSION_VANILLA, "Greater Intellect",       240);
             AddEnchantGossip(player, EXPANSION_VANILLA, "Superior Spirit",         241);
             AddEnchantGossip(player, EXPANSION_VANILLA, "Mana Regeneration",       242);
-            AddEnchantGossip(player, EXPANSION_VANILLA, "Healing",                 243);
+            AddEnchantGossip(player, EXPANSION_VANILLA, "Spell Power",                 243);
 
             if (player->HasSkill(SKILL_LEATHERWORKING) && player->GetSkillValue(SKILL_LEATHERWORKING) == 450)
             {
@@ -605,18 +612,15 @@ public:
             }
             AddEnchantGossip(player, EXPANSION_WRATH,   "16 Critical Strike", 178);
             AddEnchantGossip(player, EXPANSION_WRATH,   "2% Threat + 10 Parry", 179);
-            AddEnchantGossip(player, EXPANSION_VANILLA, "44 Attack Power", 180);
+            AddEnchantGossip(player, EXPANSION_WRATH,   "44 Attack Power", 180);
             AddEnchantGossip(player, EXPANSION_WRATH,   "20 Agility", 181);
             AddEnchantGossip(player, EXPANSION_WRATH,   "20 Hit Rating", 182);
             AddEnchantGossip(player, EXPANSION_WRATH,   "15 Expertise", 183);
             AddEnchantGossip(player, EXPANSION_VANILLA, "Greater Strength",        246);
-            AddEnchantGossip(player, EXPANSION_VANILLA, "Greater Agility (+15)",   247);
             AddEnchantGossip(player, EXPANSION_VANILLA, "Riding Skill",            248);
-            AddEnchantGossip(player, EXPANSION_VANILLA, "Healing Power",           249);
+            AddEnchantGossip(player, EXPANSION_VANILLA, "Spell Power",           249);
             AddEnchantGossip(player, EXPANSION_VANILLA, "Superior Agility",        250);
             AddEnchantGossip(player, EXPANSION_VANILLA, "Shadow Power",            251);
-            AddEnchantGossip(player, EXPANSION_VANILLA, "Subtlety (-2% Threat)",   252);
-            AddEnchantGossip(player, EXPANSION_VANILLA, "Dodge (+1%)",             253);
             AddGossipItemFor(player, GOSSIP_ICON_TALK, "Back", GOSSIP_SENDER_MAIN, 300);
             player->PlayerTalkClass->SendGossipMenu(100010, creature->GetGUID());
             return true;
@@ -636,15 +640,16 @@ public:
             break;
 
         case 11: // Enchant Boots
-            AddEnchantGossip(player, EXPANSION_VANILLA, "32 Attack Power", 191);
-            AddEnchantGossip(player, EXPANSION_WRATH,   "15 Stamina + Minor Speed Increase", 192);
-            AddEnchantGossip(player, EXPANSION_VANILLA, "16 Agility", 193);
-            AddEnchantGossip(player, EXPANSION_VANILLA, "18 Spirit", 194);
+            AddEnchantGossip(player, EXPANSION_WRATH, "32 Attack Power", 191);
+            AddEnchantGossip(player, EXPANSION_WRATH,   "15 Stamina + p  Increase", 192);
+            AddEnchantGossip(player, EXPANSION_WRATH, "16 Agility", 193);
+            AddEnchantGossip(player, EXPANSION_WRATH, "18 Spirit", 194);
             AddEnchantGossip(player, EXPANSION_WRATH,   "Restore 7 Health + Mp5", 195);
             AddEnchantGossip(player, EXPANSION_WRATH,   "12 Hit Rating + 12 Critical", 196);
-            AddEnchantGossip(player, EXPANSION_VANILLA, "22 Stamina", 197);
-            AddEnchantGossip(player, EXPANSION_VANILLA, "Greater Agility (+7)",    257);
+            AddEnchantGossip(player, EXPANSION_WRATH, "22 Stamina", 197);
+            AddEnchantGossip(player, EXPANSION_VANILLA, "+7 Agility",    257);
             AddEnchantGossip(player, EXPANSION_VANILLA, "Minor Speed",             258);
+            AddEnchantGossip(player, EXPANSION_VANILLA, "+7 Stamina",             259);
 
             if (player->HasSkill(SKILL_ENGINEERING) && player->GetSkillValue(SKILL_ENGINEERING) == 450)
             {
@@ -1227,73 +1232,76 @@ public:
             break;
     
         // Cloak
-        case 228:
+        case 232:
             Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_BACK), CLASSIC_CLOAK_LESSER_AGILITY);
             break;
-        case 229:
+        case 233:
             Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_BACK), CLASSIC_CLOAK_GREATER_RESISTANCE);
             break;
-        case 230:
+        case 234:
             Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_BACK), CLASSIC_CLOAK_SUPERIOR_DEFENCE);
+            break;
+        case 231:
+            Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_BACK), CLASSIC_CLOAK_SUBTLETY);
             break;
     
         // Chest
-        case 231:
-            Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_CHEST), ENCHANT_CHEST_GREATER_DEFENSE);
+        case 235:
+            Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_CHEST),  CLASSIC_CHEST_GREATER_STATS);
             break;
-        case 232:
+        case 236:
             Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_CHEST), CLASSIC_CHEST_MAJOR_HEALTH);
             break;
-        case 233:
+        case 237:
             Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_CHEST), CLASSIC_CHEST_MAJOR_MANA);
             break;
     
         // Bracers
-        case 234:
+        case 238:
             Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_WRISTS), CLASSIC_BRACERS_SUPERIOR_STR);
             break;
-        case 235:
+        case 239:
             Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_WRISTS), CLASSIC_BRACERS_SUPERIOR_STA);
             break;
-        case 236:
+        case 240:
             Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_WRISTS), CLASSIC_BRACERS_GREATER_INT);
             break;
-        case 237:
+        case 241:
             Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_WRISTS), CLASSIC_BRACERS_SUPERIOR_SPIRIT);
             break;
-        case 238:
+        case 242:
             Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_WRISTS), CLASSIC_BRACERS_MANA_REGEN);
             break;
-        case 239:
+        case 243:
             Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_WRISTS), CLASSIC_BRACERS_HEALING);
             break;
     
         // Gloves
-        case 242:
+        case 246:
             Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_HANDS), CLASSIC_GLOVES_GREATER_STR);
             break;
-        case 243:
-            Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_HANDS), ENCHANT_GLOVES_CRUSHER);
-            break;
-        case 244:
+        case 248:
             Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_HANDS), CLASSIC_GLOVES_RIDING);
             break;
-        case 245:
+        case 249:
             Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_HANDS), CLASSIC_GLOVES_HEALING_POWER);
             break;
-        case 246:
+        case 250:
             Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_HANDS), CLASSIC_GLOVES_SUPERIOR_AGI);
             break;
-        case 247:
+        case 251:
             Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_HANDS), CLASSIC_GLOVES_SHADOW_POWER);
             break;
     
         // Boots
-        case 250:
-            Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_FEET), ENCHANT_BOOTS_SUPERIOR_AGILITY);
+        case 257:
+            Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_FEET), CLASSIC_BOOTS_GREATER_AGILITY);
             break;
-        case 251:
-            Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_FEET), ENCHANT_BOOTS_GREATER_ASSULT);
+        case 258:
+            Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_FEET), CLASSIC_BOOTS_MINOR_SPEED);
+            break;
+        case 259:
+            Enchant(player, creature, player->GetItemByPos(INVENTORY_SLOT_BAG_0, EQUIPMENT_SLOT_FEET), CLASSIC_BOOTS_GREATER_STAMINA);
             break;
 
         case 300:
